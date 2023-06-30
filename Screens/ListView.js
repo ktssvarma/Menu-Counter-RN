@@ -1,13 +1,14 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
 
-export class Slider extends Component {
+export class ListView extends Component {
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: 'teal'}}>
+      <View>
+        <Text>ListView</Text>
       </View>
-    );
+    )
   }
 }
 
-export default Slider
+export default ListView

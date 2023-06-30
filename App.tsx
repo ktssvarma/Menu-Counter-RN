@@ -1,20 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import {SafeAreaView, StatusBar, Text, View, useColorScheme} from 'react-native';
+import { StatusBar, View} from 'react-native';
 import Screens from './Screens';
+import 'react-native-gesture-handler';
+import { backgroundColor } from './theme';
 
 function App(): JSX.Element {
   return (
-    <View style={{flex: 1}}>
-      <StatusBar barStyle="light-content" backgroundColor={'dark'} />
-      <Screens />
-    </View>
+      <View style={{flex: 1}}>
+        <StatusBar
+          barStyle="light-content"
+          translucent
+          backgroundColor={backgroundColor}
+        />
+        <Screens />
+      </View>
   );
 }
 
