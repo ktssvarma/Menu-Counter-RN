@@ -3,6 +3,7 @@ import { StatusBar, View} from 'react-native';
 import Screens from './Screens';
 import 'react-native-gesture-handler';
 import { backgroundColor } from './theme';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): JSX.Element {
   return (
