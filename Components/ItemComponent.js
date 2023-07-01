@@ -68,7 +68,7 @@ export class ItemComponent extends Component {
               {count}
             </Text>
           </View>
-          <View style={{flex: 10}}>
+          <View style={{flex: 4}}>
             <Slider
               onSubmit={() => {
                 valueCallback(count+1);

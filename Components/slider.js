@@ -21,9 +21,12 @@ export class Slider extends Component {
               fontSize: 18,
               fontWeight: '600',
             }}
-            autoReset={true}
-            autoResetDelay={100}
             completeThreshold={100}
+            animation={false}
+            autoReset={true}
+            autoResetDelay={50}
+            completePercent={80}
+            animationDuration={300}
             onSlideEnd={() => {
               onSubmit();
             }}
