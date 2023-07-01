@@ -20,7 +20,7 @@ export class List extends Component {
     return (
       <ScrollView
         style={{flex: 1, backgroundColor: backgroundColor, padding: 30}}>
-        {data?.map(item => {
+        {data?.map((item, index) => {
           return (
             <View
               style={{
@@ -32,7 +32,8 @@ export class List extends Component {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 marginVertical: 10,
-              }}>
+              }}
+              key={index}>
               <Text
                 style={{
                   fontSize: 24,
