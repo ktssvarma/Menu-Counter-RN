@@ -1,2 +1,2 @@
-export const backgroundColor='#0c2833';
-export const textColor = '#d2ebf5';
+export const backgroundColor='#142d55';
+export const textColor = '#b7e3ff';

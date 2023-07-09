@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {backgroundColor, textColor} from '../theme';
 import ItemComponent from '../Components/ItemComponent';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import LinearGradient from 'react-native-linear-gradient';
 
 export class Main extends Component {
   state = {
@@ -34,76 +35,84 @@ export class Main extends Component {
     const {navigation} = this.props;
 
     return (
-      <ScrollView
-        style={{
-          flex: 1,
-          backgroundColor: backgroundColor,
-          paddingHorizontal: 30,
-          paddingVertical: 20,
-        }}>
-        <ItemComponent
-          name="Tea"
-          color="#EFE0C9"
-          valueCallback={e => {
-            this.setState({tea: e});
-          }}
-        />
-        <ItemComponent
-          name="Coffee"
-          color="#af7f5d"
-          valueCallback={e => {
-            this.setState({coffee: e});
-          }}
-        />
-        <ItemComponent
-          name="Milk"
-          color="#FFF"
-          valueCallback={e => {
-            this.setState({milk: e});
-          }}
-        />
-        <ItemComponent
-          name="Green Tea"
-          color="#b1cba6"
-          valueCallback={e => {
-            this.setState({greenTea: e});
-          }}
-        />
-        <TouchableOpacity
+      <LinearGradient
+        colors={[backgroundColor, '#1e437e', '#234e93', '#2759a8', '#5c8cd9']}
+        style={{flex: 1}}>
+        <ScrollView
           style={{
-            height: 40,
-            backgroundColor: '#7299c9',
-            borderRadius: 10,
-            marginVertical: 20,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-          onPress={() => {
-            this.submit();
+            paddingHorizontal: 30,
+            paddingTop: 20,
           }}>
-          <Text
-            style={{color: backgroundColor, fontWeight: '700', fontSize: 20}}>
-            Save
-          </Text>
-        </TouchableOpacity>
-        <View
-          style={{
-            height: 30,
-            borderRadius: 10,
-            marginVertical: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+          <ItemComponent
+            name="Tea"
+            color="#EFE0C9"
+            valueCallback={e => {
+              this.setState({tea: e});
+            }}
+          />
+          <ItemComponent
+            name="Coffee"
+            color="#af7f5d"
+            valueCallback={e => {
+              this.setState({coffee: e});
+            }}
+          />
+          <ItemComponent
+            name="Milk"
+            color="#FFF"
+            valueCallback={e => {
+              this.setState({milk: e});
+            }}
+          />
+          <ItemComponent
+            name="Green Tea"
+            color="#b1cba6"
+            valueCallback={e => {
+              this.setState({greenTea: e});
+            }}
+          />
           <TouchableOpacity
+            style={{
+              height: 40,
+              backgroundColor: '#7EABED',
+              borderRadius: 10,
+              marginVertical: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
             onPress={() => {
-              navigation.navigate('History');
+              this.submit();
             }}>
-            <Text style={{color: textColor, fontWeight: '700', fontSize: 20}}>
-              List
+            <Text
+              style={{color: backgroundColor, fontWeight: '700', fontSize: 20}}>
+              Save
             </Text>
           </TouchableOpacity>
-        </View>
-      </ScrollView>
+          <View
+            style={{
+              height: 30,
+              borderRadius: 10,
+              marginVertical: 10,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('History');
+              }}>
+              <Text
+                style={{
+                  color: backgroundColor,
+                  fontWeight: '700',
+                  fontSize: 20,
+                  paddingBottom: 50,
+                }}>
+                List
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </LinearGradient>
     );
   }
 }

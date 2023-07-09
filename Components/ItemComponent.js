@@ -39,27 +39,28 @@ export class ItemComponent extends Component {
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: textColor,
-              borderRadius: 30,
+              borderRadius: 10,
               marginTop: 10,
+              flex: 1,
             }}
             onPress={() => {
               if (count > 0) {
-                valueCallback(count-1);
+                valueCallback(count - 1);
                 this.setState({count: count - 1});
               }
             }}>
-            <View
+            <Text
               style={{
-                width: 20,
-                height: 5,
-                backgroundColor: backgroundColor,
-                borderRadius: 10,
-              }}
-            />
+                color: backgroundColor,
+                fontSize: 32,
+                fontWeight: '700',
+              }}>
+              -
+            </Text>
           </TouchableOpacity>
           <View
             style={{
-              flex: 3,
+              flex: 1,
               justifyContent: 'center',
               alignItems: 'center',
               marginTop: 10,
@@ -68,20 +69,30 @@ export class ItemComponent extends Component {
               {count}
             </Text>
           </View>
-          <View style={{flex: 4}}>
-            <Slider
-              onSubmit={() => {
-                valueCallback(count+1);
-                this.setState({count: count + 1});
-              }}
-            />
-            {/* <TouchableOpacity
-              style={{flex: 1}}
-              onPress={() => {
-                this.setState({count: count + 1});
-              }}
-            /> */}
-          </View>
+          <TouchableOpacity
+            style={{
+              width: 40,
+              height: 40,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: textColor,
+              borderRadius: 10,
+              marginTop: 10,
+              flex: 1,
+            }}
+            onPress={() => {
+              valueCallback(count + 1);
+              this.setState({count: count + 1});
+            }}>
+            <Text
+              style={{
+                color: backgroundColor,
+                fontSize: 32,
+                fontWeight: '700',
+              }}>
+              +
+            </Text>
+          </TouchableOpacity>
         </View>
         <View
           style={{
