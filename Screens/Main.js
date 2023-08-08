@@ -102,10 +102,9 @@ export class Main extends Component {
               }}>
               <Text
                 style={{
-                  color: backgroundColor,
+                  color: textColor,
                   fontWeight: '700',
                   fontSize: 20,
-                  paddingBottom: 50,
                 }}>
                 List
               </Text>
